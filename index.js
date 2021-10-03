@@ -24,7 +24,12 @@ app.post("/test/:name", (req, res) => {
     //res.status(200).json(req.params.name);
     axios
         .get(process.env.uri + req.params.name, config)
-        .then((resposne) => res.status(200).json(resposne.data));
+        .then((resposne) => res.status(200).json(resposne.data))
+        .catch((ex) => console.log(ex));
+});
+
+app.get("/test/:name", (req, res) => {
+    res.status(200).send("You must've use post method to do this request!!");
 });
 
 app.use(errorHandler);
@@ -42,28 +47,3 @@ function errorHandler(err, req, res, next) {
 app.listen(port, () => {
     console.log("App listening at port " + port);
 });
-
-
-
-
-
-
-
-/*
- "items": [
-        {
-            "sugar_g": 20.6,
-            "fiber_g": 4.7,
-            "serving_size_g": 200,
-            "sodium_mg": 2,
-            "name": "apple",
-            "potassium_mg": 22,
-            "fat_saturated_g": 0.1,
-            "fat_total_g": 0.3,
-            "calories": 105.9,
-            "cholesterol_mg": 0,
-            "protein_g": 0.5,
-            "carbohydrates_total_g": 28.1
-        }
-    ]
-    */

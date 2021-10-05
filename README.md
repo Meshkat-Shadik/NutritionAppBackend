@@ -8,7 +8,7 @@ https://nutrition-app-ssm.herokuapp.com
 
 ## GET Nutrition Data From API (Example)
 
-[POST Method]
+[GET Method]
 https://nutrition-app-ssm.herokuapp.com/test/1kg%20mango
 
 **_Note: 1kg%20mango means 1kg mango, %20 means space_**
